@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-br">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Instruções</title>
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+      <style>
+          @media screen and (max-width: 1000px){
+              video {
+                  width: 90%;
+              }
+          }
+          @media screen and (min-width: 1200px){
+              video {
+                  width: 50%;
+              }
+          }
+      </style>
+  </head>
+  <body>
+  {% include 'partials/nav_sobre.html' %}
+  <br>
+    <main class="mt-5 mx-auto text-center">
+      <div class="p-5">
+        <br>
+        <img src="{% static 'img/Logo_Beevo_menor(2).png' %}" class="rounded mx-auto d-block" width="170" alt="...">
+          <br>
+        <br>
+        <p class="fs-1 text-center">Passo a Passo de como criar sua reserva com sucesso!</p>
+        <p class="fs-3 text-center margin-top 50px">Informando Matrícula e Senha!</p>
+        <p class="fs-5 text-center">Começe na página de login, colocando sua Matrícula, sua Senha e clique no botão "Entrar" e aguarde o carregamento da página, esse procedimento, pode demorar alguns segundos. <strong> Lembrete, clique no botão "Entrar" Apenas uma vez! </strong></p>
+        <div class="mx-auto" style="width: 100%; margin-top: 40px">
+        <video controls width="100%">
+          <source src="{% static 'video/Beevo Login.mov' %}" type="video/ogg"> <!-- Escolhido pelo Firefox -->
+          <source src="{% static 'video/Beevo Login.mov' %}" type="video/quicktime"> <!-- Escolhido pelo Safari -->
+        </video>
+        </div>
+      </div>
+
+    <div class="w-auto p-3" style="background-color: rgb(250, 250, 250); margin-top: 50px;">
+      <div class="p-5">
+        <p class="fs-1 text-center">Customizando Data, Período, Equipamento e Aula!</p>
+      <p class="fs-5 text-center">Esta Seção, permite que você insira a data, o periodo, o equipamento, e a aula desejada:
+        <p class="fs-5 text-center">* Na aba "insira a data desejada", temos duas opções, a primeira, você pode clicar na caixa de seleção, que irá abrir um calendário e você poderá selecionar a data mais distante desejada </p>
+        <p class="fs-5 text-center">* Logo a baixo, temos a segunda opção de seleção de data, um pouco mais rapida, permite que você clique nos botões, e as datas vão mudando, para 1 dia a mais ou 1 dia a menos.</p>
+        <p class="fs-5 text-center">* Na aba "Selecione o Período" temos as opções de selecionar o Período Matutino, ou Vespertino.</p>
+        <p class="fs-5 text-center">* A aba "Selecione o equipamento" Nos permite selecionar o equipamento desejado.</p>
+        <p class="fs-5 text-center">* As abas de seleção de aula, nos oferecem 8 opções de aula para seleção, as caixas que estiverem com a cor <strong>AZUL</strong>, estão disponíveis para reserva, as que estiverem com a cor <strong>CINZA</strong>, já foram reservadas por outro colaborador, impossibilítando a reserva.</p>
+      <div class="mx-auto" style="width: 100%; margin-top: 40px;">
+        <video controls width="100%">
+          <source src="{% static 'video/Beevo Agendamento.mov' %}" type="video/ogg"> <!-- Escolhido pelo Firefox -->
+          <source src="{% static 'video/Beevo Agendamento.mov' %}" type="video/quicktime"> <!-- Escolhido pelo Safari -->
+        </video>
+      </div>
+      </div>
+    </div>
+
+    <div class="w-auto mx-5" style="margin-top: 50px;">
+      <p class="fs-1 text-center">Confirmação da reserva!</p>
+      <p class="fs-5 text-center">* Esta seção nos mostra as informações fornecidas anteriormente, e nos irforma: "Você está Fazendo o agendamento no dia 04/10/2022, no período Vespertino, com o equipamento: Auditótio, na Sala: 03", essas informações não podem ser alteradas, pois são apenas para simples conferência, <strong>Caso alguma informação esteja incorreta, retorne para a pagina anterior.</strong> </p>
+      <p class="fs-5 text-center">* Confirmadas as informações, seguimos para a Aba: Selecione a Sala. <Strong>IMPORTANTE: Selecione a Sala correta, para um melhor mapeamento da instituição de ensino</Strong> </p>
+      <p class="fs-5 text-center">* Logo abaixo, temos a Aba das "Informações extras", esta Aba não é obrigatória, fica por sua livre escolha, colocar informações nesta caixa.</p>
+      <p class="fs-5 text-center">* Preenchidos os campos necessários, mais abaixo, seguimos para a confirmação do agendamento.</p>
+      <div class="mx-auto" style="width: 100%; margin-top: 40px;">
+        <video controls width="100%">
+          <source src="{% static 'video/Beevo conformação de agendamento.mov' %}" type="video/ogg"> <!-- Escolhido pelo Firefox -->
+          <source src="{% static 'video/Beevo conformação de agendamento.mov' %}" type="video/quicktime"> <!-- Escolhido pelo Safari -->
+        </video>
+      </div>
+    </div>
+    <div class="w-auto p-5" style="background-color: rgb(250, 250, 250); margin-top: 50px;">
+      <div class="">
+          <p class="fs-1 text-center">Cancelando a Reserva!</p>
+          <p class="fs-5 text-center">* Nesta Aba, aparece em <strong>VERMELHO</strong>, o seu agendamento confirmado, ele so aparece em vermelho para você, e só pode ser editado por você.</p>
+          <p class="fs-5 text-center">* A Opção de edição permite que você cancele o agendamento, para realizar esse procedimento, você deve clicar na aba que está em <strong>VERMELHO</strong>, na sequência outra aba se abrirá com a opção de <strong>EXCLUIR AGENDAMENTO</strong>, clique neste botão, e pronto, seu agendamento foi cancelado! retornando para a aba de agendamento, permitindo que um novo agendamento seja realizado.</p>
+          <div class="mx-auto" style="width: 100%; margin-top: 40px; margin-bottom: 60px;">
+            <video controls width="100%">
+              <source src="{% static 'video/Cancelamento do agendamento.mov' %}" type="video/ogg"> <!-- Escolhido pelo Firefox -->
+              <source src="{% static 'video/Cancelamento do agendamento.mov' %}" type="video/quicktime"> <!-- Escolhido pelo Safari -->
+            </video>
+          </div>
+      </div>
+    </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>

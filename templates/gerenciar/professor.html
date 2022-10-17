@@ -1,0 +1,98 @@
+<!doctype html>
+{% load static %}
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastrar Professor</title>
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+</head>
+  <br></br>
+  <body>
+  {% include 'partials/nav_full.html' %}
+  <br>
+    <div class="conteiner">
+        <div class="align-items-center">
+            <div class="col-md-10 mx-auto col-lg-5">
+                <form class="p-4 p-md-5 border rounded-3 bg-light" method="POST" autocomplete="off">
+                    {% if sucess == 1 %}
+                         <div class="alert alert-success alert-dismissible fade show" role="alert">
+                             <strong>Cadastro realizado com sucesso!</strong> Você cadastrou o professor "<strong style="text-transform: uppercase">{{ nome_prof }}</strong>" com sucesso!.
+                             <br>
+                         </div>
+                    {% elif error == 1 %}
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                          <strong>Ops... Já temos cadastro!</strong> Já temos alguem com esse apelido ou matricula.
+                        </div>
+                    {% elif error == 2 %}
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                          <strong>As senhas não são iguais!</strong> Verifique a senha e tente novamente!.
+                        </div>
+                    {% elif error == 3 %}
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                          <strong>Só aceitamos número!</strong> Por favor, digite apenas número no campo da matricula.
+                        </div>
+                    {% endif %}
+                    {% csrf_token %}
+                    <div class="form-floating mb-3">
+                        {{ form.nome }}
+                        <script src="{% static 'js/limpar_str.js' %}"></script>
+                        <p></p>
+                        <label for="inputEmail">Nome do(a) Professor(a):</label>
+                        <p></p>
+                        <div class="form-floating mb-3">
+                            {{ form.sobrenome }}
+                            <script src="{% static 'js/limpar_sobre.js' %}"></script>
+                            <p></p>
+                            <label for="inputEmail">Sobrenome do(a) Professor(a):</label>
+                            <p></p>
+                        </div>
+                        <div class="form-floating mb-3">
+                            {{ form.apelido }}
+                            <script src="{% static 'js/limpar_apelido.js' %}"></script>
+                            <p></p>
+                            <label for="inputEmail">Apelido do(a) Professor(a):</label>
+                            <p></p>
+                        </div>
+                        <div class="form-floating mb-3">
+                            {{ form.matricula }}
+                            <p></p>
+                            <label for="inputEmail">Matricula do(a) Professor(a):</label>
+                            <p></p>
+                            <script src="{% static 'js/limpar.js' %}"></script>
+                        </div>
+                        <div class="form-floating mb-3">
+                            {{ form.senha }}
+                            <p></p>
+                            <label for="inputEmail">Senha</label>
+                            <span class="lnr lnr-eye"></span>
+                            <p></p>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" name="senha_confirm" maxlength="25" required>
+                            <p></p>
+                            <label for="inputEmail">Confirme sua senha</label>
+                            <span class="lnr lnr-eye"></span>
+                            <p></p>
+                        </div>
+                        <div class="form-floating">
+                            <select class="form-select" name="staff">
+                                <option value="0">Não</option>
+                                <option value="1">Sim</option>
+                            </select>
+                        <label for="floatingSelect">É da coordenação?</label>
+                            <p></p>
+
+
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Finalizar Cadastro</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>
+{#teste#}

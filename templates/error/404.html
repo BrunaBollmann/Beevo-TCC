@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-br">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Atenção!</title>
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="position-absolute top-50 start-50 translate-middle">
+      {% block img %}<img src="{% static 'img/404.png' %}" class="rounded mx-auto d-block" alt="..." width="400">{% endblock %}
+      <div class="card-body rounded mx-auto d-block text-center">
+        <br>
+        <h5 class="card-title">{% block titulo %}ERROR 404!{% endblock %}</h5>
+        <p class="card-text">{% block conteudo %}Desculpe, não encontramos sua pagina, verifique e tente novamente.{% endblock %}</p>
+        <a href="/" class="btn btn-danger ">Voltar</a>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>

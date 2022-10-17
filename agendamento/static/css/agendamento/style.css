@@ -1,0 +1,10 @@
+@media screen and (max-width: 460px){
+    form a button {
+        margin-top: 3.5%;
+    }
+
+    form button {
+        margin-top: 3.5%;
+    }
+
+}
